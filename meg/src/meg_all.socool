@@ -1,0 +1,27 @@
+{ f: 311.127, l: 1, g: 1, p: 0 }
+    
+data = { 
+  Overlay [
+      #a | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0111_full.csv | Pa -1,
+      #b | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0121_full.csv | Pa -2/3,
+      #c | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0131_full.csv | Pa -1/2,
+      #d | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0211_full.csv | Pa -1/3,
+      #e | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0221_full.csv | Pa -1/5,
+      #f | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0231_full.csv | Pa -1/8,
+      #g | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0311_full.csv | Pa 1/8,
+      #h | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0321_full.csv | Pa 1/5,
+      #i | csv(2.0e12) ./new_data_result/wi1lmhbs/meg0331_full.csv | Pa 1/3,
+      #j | csv(2.0e12) ./new_data_result/wi1lmhbs/meg1511_full.csv | Pa 1/2,
+      #k | csv(2.0e12) ./new_data_result/wi1lmhbs/meg1521_full.csv | Pa 2/3,
+      #l | csv(2.0e12) ./new_data_result/wi1lmhbs/meg1531_full.csv | Pa 1,
+  ]
+  | Lm 1/8
+  | Gm 1/4
+}
+
+main = {
+    Seq [
+        data,
+        Fm 0 | Lm 2
+    ]
+}

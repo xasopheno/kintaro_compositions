@@ -1,0 +1,200 @@
+{ f: 440, l: 1, g: 1, p: 0 }
+
+bass = {
+  O[
+    (1/4, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 1, 
+    Fm 2, Fm 15/8, Fm 2, Fm 5/3,
+    Fm 7/4, Fm 2, Fm 4/3 | Lm 2, 
+    -- 
+    Fm 1,
+    Fm 3/2, 
+    Seq [
+      Fm 5/3, Fm 3/2, Fm 4/3, Fm 3/2, 
+      Fm 5/3, Fm 15/8,
+    ] | Lm 1/2,
+    Fm 2, Seq [Fm 5/4, Fm 4/3] | Lm 1/2, 
+    Fm 3/2 | Lm 2,
+    Fm 1 | Lm 4,
+  ]
+}
+
+bass2 = {
+  O[
+    (1/4, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 1,
+    Fm 3/2, Fm 5/4 | Fm 5/4, Fm 5/3, 
+    Seq [Fm 9/4, Fm 2] | Lm 1/2,
+    Fm 15/8, Fm 5/3, Fm 3/2 | Lm 2,
+    --
+    Fm 5/4, 
+    Seq [
+      Fm 5/3, Fm 3/2, Fm 5/3, Fm 15/8, 
+      Fm 2, Fm 9/4, Fm 2, Fm 15/8, 
+    ] | Lm 1/2,
+    Fm 5/3,
+    Seq [Fm 5/4, Fm 4/3] | Lm 1/2,
+    Fm 3/2 | Lm 2,
+    Fm 1 | Lm 4
+  ]
+}
+
+tenor = {
+  O[
+    (1/2, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 3/2,
+    Fm 3/2 | Lm 7/2, Fm 4/3 | Lm 1/2,
+    Fm 4/3, Fm 1, Fm 1 | Lm 2,
+    --
+    Fm 1, 
+    Fm 15/16, Fm 1, Fm 4/3 | Lm 2,
+    Seq [Fm 5/4, Fm 9/8] | Lm 1/2, 
+    Fm 1 | Lm 2, Fm 15/16,
+    Fm 3/4 | Lm 4,
+  ]
+}
+
+tenor2 = {
+  O[
+    (1/2, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 3/2,
+    Seq [Fm 3/2, Fm 4/3] | Lm 1/2,
+    Fm 5/4, Fm 5/4, Fm 9/8,
+    Fm 9/8, Fm 1, Fm 15/16 | Lm 2,
+    --
+    Fm 15/16, 
+    Fm 1, Fm 4/3, 
+    Seq [Fm 5/4, Fm 4/3, Fm 5/4, Fm 9/8] | Lm 1/2,
+    Fm 1 | Lm 3, Fm 15/16, 
+    Fm 3/4 | Lm 3
+  ]
+}
+
+alto = {
+  O[
+    (1/1, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 1, 
+    Fm 1, Fm 9/8, Fm 1, Fm 1,
+    Seq [Fm 2/3 | Fm 4/3, Fm 5/6] | Lm 1/2, 
+    Fm 3/4, Fm 5/6 | Lm 2,
+    --
+    Fm 3/4,
+    Seq [Fm 3/4, Fm 2/3] | Lm 1/2, 
+    Fm 5/8, Fm 5/6 | Lm 2,
+    Fm 3/4 | Lm 2, Fm 3/4 | Lm 3/2, 
+    Fm 2/3 | Lm 1/2,
+    Fm 5/8 | Lm 4,
+  ]
+}
+
+alto2 = {
+  O[
+    (1/1, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 1, Fm 15/16, Fm 15/16,    
+    Seq [Fm 5/6, Fm 3/4] | Lm 1/2,
+    Fm 9/8 | Fm 5/8,
+    Fm 3/4 | Lm 3/2,
+    Fm 9/8 | Fm 5/8 | Lm 1/2,
+    Fm 3/4 | Lm 2,
+    --
+    Fm 5/8 | Fm 5/4, 
+    Fm 5/8, Fm 5/6, Fm 3/4, 
+    Seq [Fm 5/6, Fm 15/16] | Lm 1/2,
+    Fm 1, Fm 3/4 | Lm 5/2, Fm 2/3 | Lm 1/2, 
+    Fm 5/8 | Lm 4
+  ]  
+}    
+    
+soprano = {
+  O[
+    (1/1, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 5/4, 
+    Seq [Fm 5/4, Fm 4/3] | Lm 1/2, 
+    Fm 3/2, Fm 5/4, Fm 1, 
+    Fm 9/8, Fm 5/4, Fm 4/3 | Lm 2,
+    --
+    Fm 5/4, 
+    Fm 9/8, Fm 1, Fm 1 | Lm 3/2, 
+    Fm 9/8 | Lm 1/2,
+    Fm 5/4 | Lm 2, 
+    Seq [Fm 9/8, Fm 1] | Lm 1/2, Fm 9/8,
+    Fm 1 | Lm 4,
+  ]
+}
+
+soprano2 = {
+  O[
+    (1/1, 0, 1, 0),
+  ]
+  | Seq [
+    Fm 5/4, Fm 9/8, Fm 5/4, Fm 1,
+    Fm 5/6, Fm 15/16, Fm 1, Fm 9/8 | Lm 2,
+    --
+    Fm 5/4, 
+    Fm 1 | Lm 2, Fm 1 | Lm 3/2,
+    Fm 9/8 | Lm 1/2, 
+    Fm 5/4 | Lm 2, 
+    Seq [Fm 9/8, Fm 1] | Lm 1/2, 
+    Fm 9/8, 
+    Fm 1 | Lm 4
+  ]
+}
+    
+main = {
+  Portamento 3 | 
+  -- O[
+    -- -- (2, 0, 1/10, -1/8),
+    -- -- (2, 0, 1/10, 1/8),
+    -- (1/1, 2, 1, -1),
+    -- -- (1/1, 0, 1, 0),
+    -- (1/1, 0, 1, 1),
+  -- ]
+  -- | Fm 3/2
+  Seq [
+    Overlay [
+      #s | soprano | Pa 1/2,
+      #a | alto | Pa -1/2, 
+      #t | tenor | Pa 1/2,
+      #b | bass | Pa -1/2,
+    ],
+    Overlay [
+      #s | soprano2 | Pa 1/2,
+      #a | alto2 | Pa -1/2, 
+      #t | tenor2 | Pa 1/2,
+      #b | bass2 | Pa -1/2,
+    ]
+  ]
+  | Lm 7/8
+  | Gm 2/3
+  | Seq [
+    Fm 7/4 | Lm 4/7, 
+    Fm 11/8 | Lm 8/11, 
+    Lm 1, 
+    Fm 5/6 | Lm 6/5
+  ]
+  -- | Overlay [
+    -- Sine, 
+    -- Reverb 1/2 | Gm 1/2
+    -- -- Fm 0 | Lm 1/100,
+    -- -- Overlay [
+    -- --   Sine 2 | Gm 1/8 | Fm 1/2,
+    -- --   Sine 1.5 | Gm 1/8 | Fm 1,
+    -- --   Sine
+    -- -- ] 
+  -- ]
+  -- | Repeat 3
+}

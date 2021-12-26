@@ -1,0 +1,11 @@
+[package]
+name = "meg"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+kintaro = { path = "../../shader_so_cool" }
+cgmath = { version = "0.18" }
+rand = "0.8.4"
+indexmap = "1.7.0"

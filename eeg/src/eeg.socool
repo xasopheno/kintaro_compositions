@@ -1,0 +1,58 @@
+{ f: 311.127, l: 1, g: 1, p: 0 }
+    
+data = { 
+  Fm 1/2 |
+  Overlay [
+      -- #a | csv(2.0e7) ./data/eeg_001.csv | Pa -1,
+      -- #b | csv(2.0e7) ./data/eeg_002.csv | Pa -2/3,
+      -- #c | csv(2.0e7) ./data/eeg_003.csv | Pa -1/2,
+      #d | csv(2.0e7) ./data/eeg_004.csv | Pa -1/3,
+      #e | csv(2.0e7) ./data/eeg_005.csv | Pa -1/5,
+      -- #f | csv(2.0e7) ./data/eeg_006.csv | Pa -1/8,
+      -- #g | csv(2.0e7) ./data/eeg_007.csv | Pa 1/8,
+      #h | csv(2.0e7) ./data/eeg_008.csv | Pa 1/5,
+      #i | csv(2.0e7) ./data/eeg_009.csv | Pa 1/3,
+      -- #j | csv(2.0e7) ./data/eeg_010.csv | Pa 1/2,
+      -- #k | csv(2.0e7) ./data/eeg_011.csv | Pa 2/3,
+      -- #l | csv(2.0e7) ./data/eeg_012.csv | Pa 1,
+  ]
+  | Lm 1/8
+  | Gm 1/4
+  | Fm 1/4
+}
+
+main = {
+    Seq [
+        Overlay [
+            data,
+            -- Overlay [
+                -- Fm 2 | Gm 1/8,
+                -- Fm 5/4 | Gm 1/8,
+                -- Fm 3/2 | Gm 1/4,
+                -- Fm 1 | Gm 1/4,
+                -- -- Fm 15/16 | Gm 1/16,
+                -- -- Fm 7/8 | Gm 1/16,
+                -- -- Fm 5/6 | Gm 1/16,
+                -- Fm 3/4 | Gm 1/4,
+                -- -- Fm 2/3 | Gm 1/16,
+                -- -- Fm 5/8 | Gm 1/4,
+                -- -- Fm 9/16 | Gm 1/16,
+                -- Fm 1/2 | Gm 1/4,
+                -- Fm 1/4 | Gm 1/8,
+                -- Fm 0
+            -- ] 
+            -- | Gm 1/4
+            -- | O[
+                -- (1, 0, 1, -1/2),
+                -- (1, 0, 1, 1/2),
+            -- ]
+            -- | Fm 3/4
+            -- -- | Fm 9/16
+            -- | Repeat 32
+            -- | Repeat 32
+            -- | FitLength data 
+        ]
+        | Fm 4,
+        Fm 0 | Lm 2
+    ]
+}
