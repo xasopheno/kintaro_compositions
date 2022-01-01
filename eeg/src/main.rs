@@ -33,8 +33,8 @@ pub fn make_config() -> Config {
         window_size: (1920 * 2, 1080 * 2),
         cameras,
         shape: Shape {
-            n_vertices: 70,
-            n_indices: 70,
+            n_vertices: 20,
+            n_indices: 20,
             position: Box::new(RandPosition),
             color: Box::new(color::color_map()),
             indices: Box::new(RandIndex),

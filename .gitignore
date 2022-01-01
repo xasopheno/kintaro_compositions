@@ -1,3 +1,11 @@
 *.mov
 *.wav
 **/.DS_Store
+data_meg/result
+data_meg/new_result
+meg/wi1lmhbs
+meg/zn6x1no3
+data_meg/wi1lmhbs
+*/__pycache__
+*.mp3
+

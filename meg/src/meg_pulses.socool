@@ -32,38 +32,38 @@ data = {
       #k | csv(2.0e12) ./wi1lmhbs/meg1542_0.csv | Pa 1,
       #l | csv(2.0e12) ./wi1lmhbs/meg1543_0.csv | Pa 1,
 
-      #l | csv(2.0e12) ./wi1lmhbs/meg1643_0.csv | Pa 1,
+      -- #l | csv(2.0e12) ./zn6x1no3/meg1643_0.csv | Pa 1,
 
-      #b | csv(2.0e12) ./wi1lmhbs/meg1712_0.csv | Pa -1,
-      #c | csv(2.0e12) ./wi1lmhbs/meg1713_0.csv | Pa -1,
-      #e | csv(2.0e12) ./wi1lmhbs/meg1722_0.csv | Pa -1,
-      #f | csv(2.0e12) ./wi1lmhbs/meg1723_0.csv | Pa -1,
-      #h | csv(2.0e12) ./wi1lmhbs/meg1732_0.csv | Pa 1,
-      #i | csv(2.0e12) ./wi1lmhbs/meg1733_0.csv | Pa 1,
-      #l | csv(2.0e12) ./wi1lmhbs/meg1743_0.csv | Pa 1,
+      -- #b | csv(2.0e12) ./zn6x1no3/meg1712_0.csv | Pa -1,
+      -- #c | csv(2.0e12) ./zn6x1no3/meg1713_0.csv | Pa -1,
+      -- #e | csv(2.0e12) ./zn6x1no3/meg1722_0.csv | Pa -1,
+      -- #f | csv(2.0e12) ./zn6x1no3/meg1723_0.csv | Pa -1,
+      -- #h | csv(2.0e12) ./zn6x1no3/meg1732_0.csv | Pa 1,
+      -- #i | csv(2.0e12) ./zn6x1no3/meg1733_0.csv | Pa 1,
+      -- #l | csv(2.0e12) ./zn6x1no3/meg1743_0.csv | Pa 1,
 
-      #e | csv(2.0e12) ./wi1lmhbs/meg1922_0.csv | Pa -1,
-      #i | csv(2.0e12) ./wi1lmhbs/meg1933_0.csv | Pa 1,
-      #l | csv(2.0e12) ./wi1lmhbs/meg1943_0.csv | Pa 1,
+      -- #e | csv(2.0e12) ./zn6x1no3/meg1922_0.csv | Pa -1,
+      -- #i | csv(2.0e12) ./zn6x1no3/meg1933_0.csv | Pa 1,
+      -- #l | csv(2.0e12) ./zn6x1no3/meg1943_0.csv | Pa 1,
 
-      #k | csv(2.0e12) ./wi1lmhbs/meg2342_0.csv | Pa 1,
+      -- #k | csv(2.0e12) ./zn6x1no3/meg2342_0.csv | Pa 1,
 
-      #h | csv(2.0e12) ./wi1lmhbs/meg2432_0.csv | Pa 1,
-      #i | csv(2.0e12) ./wi1lmhbs/meg2433_0.csv | Pa 1,
+      -- #h | csv(2.0e12) ./zn6x1no3/meg2432_0.csv | Pa 1,
+      -- #i | csv(2.0e12) ./zn6x1no3/meg2433_0.csv | Pa 1,
 
-      #b | csv(2.0e12) ./wi1lmhbs/meg2512_0.csv | Pa -1,
+      -- #b | csv(2.0e12) ./zn6x1no3/meg2512_0.csv | Pa -1,
 
-      #e | csv(2.0e12) ./wi1lmhbs/meg2522_0.csv | Pa -1,
-      #f | csv(2.0e12) ./wi1lmhbs/meg2523_0.csv | Pa -1,
-      #h | csv(2.0e12) ./wi1lmhbs/meg2532_0.csv | Pa 1,
+      -- #e | csv(2.0e12) ./zn6x1no3/meg2522_0.csv | Pa -1,
+      -- #f | csv(2.0e12) ./zn6x1no3/meg2523_0.csv | Pa -1,
+      -- #h | csv(2.0e12) ./zn6x1no3/meg2532_0.csv | Pa 1,
 
-      #b | csv(2.0e12) ./wi1lmhbs/meg2612_0.csv | Pa -1,
-      #c | csv(2.0e12) ./wi1lmhbs/meg2613_0.csv | Pa -1,
-      #e | csv(2.0e12) ./wi1lmhbs/meg2622_0.csv | Pa -1,
-      #f | csv(2.0e12) ./wi1lmhbs/meg2623_0.csv | Pa -1,
-      #i | csv(2.0e12) ./wi1lmhbs/meg2633_0.csv | Pa 1,
-      #k | csv(2.0e12) ./wi1lmhbs/meg2642_0.csv | Pa 1,
-      #l | csv(2.0e12) ./wi1lmhbs/meg2643_0.csv | Pa 1,
+      -- #b | csv(2.0e12) ./zn6x1no3/meg2612_0.csv | Pa -1,
+      -- #c | csv(2.0e12) ./zn6x1no3/meg2613_0.csv | Pa -1,
+      -- #e | csv(2.0e12) ./zn6x1no3/meg2622_0.csv | Pa -1,
+      -- #f | csv(2.0e12) ./zn6x1no3/meg2623_0.csv | Pa -1,
+      -- #i | csv(2.0e12) ./zn6x1no3/meg2633_0.csv | Pa 1,
+      -- #k | csv(2.0e12) ./zn6x1no3/meg2642_0.csv | Pa 1,
+      -- #l | csv(2.0e12) ./zn6x1no3/meg2643_0.csv | Pa 1,
 
 -- Fundamental
       -- #a | csv(2.0e12) ./data/wi1lmhbs/ecg063_0.csv | Pa -1,
@@ -77,6 +77,7 @@ data = {
   ]
   | Lm 1/8
   | Gm 1/12
+  | Fm 1/2
 }
 
 main = {

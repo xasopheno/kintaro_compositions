@@ -186,6 +186,7 @@ main = {
     Lm 1, 
     Fm 5/6 | Lm 6/5
   ]
+  | Reverse
   -- | Overlay [
     -- Sine, 
     -- Reverb 1/2 | Gm 1/2
