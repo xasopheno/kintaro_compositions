@@ -15,8 +15,6 @@ data = {
       #k | csv(2.0e12) ./data/wi1lmhbs/meg1521_0.csv | Pa 2/3,
       #l | csv(2.0e12) ./data/wi1lmhbs/meg1531_0.csv | Pa 1,
   ]
-  | Lm 1/8
-  | Gm 1/4
 }
 
 main = {
