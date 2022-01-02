@@ -1,5 +1,6 @@
 mod data;
 mod yin;
+use colored::*;
 use rayon::prelude::*;
 use std::{
     collections::HashMap,
@@ -10,7 +11,7 @@ use yin::{Analyze, DetectionResult};
 // Type inference lets us omit an explicit type signature (which
 // would be `HashMap<String, String>` in this example).
 
-const SAMPLE_RATE: f32 = 1024.0;
+const SAMPLE_RATE: f32 = 512.0;
 const PROBABILITY_THRESHOLD: f32 = 0.3;
 
 fn main() {
@@ -26,11 +27,11 @@ fn main() {
     ];
 
     files.par_iter().for_each(|file| {
-        let count = process(file);
-        results.lock().unwrap().insert(file, count);
+        let result = process(file);
+        results.lock().unwrap().insert(file, result);
     });
 
-    let mut score: Vec<(String, usize)> = results
+    let mut score: Vec<(String, (usize, usize))> = results
         .lock()
         .unwrap()
         .to_owned()
@@ -41,14 +42,29 @@ fn main() {
     score.sort();
 
     score.iter().for_each(|x| {
-        println!("{}: {}", x.0, x.1);
+        let filename = x.0.to_owned();
+        let counts = x.1;
+        let percent = counts.0 as f32 / counts.1 as f32 * 100.0;
+        let percent_str = format!("{}%", percent);
+        println!(
+            "{}: {}/{} | {}",
+            filename,
+            counts.0,
+            counts.1,
+            if percent < 15.0 {
+                percent_str.red()
+            } else {
+                percent_str.green()
+            }
+        );
     })
 }
 
-fn process(filename: &str) -> usize {
+fn process(filename: &str) -> (usize, usize) {
     let csv = data::CsvData::get_data(filename.into()).unwrap();
     let input = csv[0].data.chunks(SAMPLE_RATE as usize);
     let mut count = 0;
+    let mut total_count = 0;
     input.for_each(|chunk| {
         let detection_result: DetectionResult =
             chunk.to_vec().analyze(SAMPLE_RATE, PROBABILITY_THRESHOLD);
@@ -56,7 +72,7 @@ fn process(filename: &str) -> usize {
         if detection_result.probability > 20.0 {
             count += 1;
         }
+        total_count += 1;
     });
-    return count;
-    // println!("{}: {} -> {}", filename, count, count > 30);
+    return (count, total_count);
 }
