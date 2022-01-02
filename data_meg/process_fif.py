@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 import logging
 import json
@@ -78,6 +79,8 @@ def process_fif(filename: str, namer):
 def make_files(raw: np.array, channel, subject):
     data = raw[0]
     print(data.size)
+    chunks_full = np.array(data[0:FILE_LENGTH * N_CHUNCKS])
+    print(chunks_full.shape)
     chunks = np.array([data[i:i+FILE_LENGTH] for i in range(0, data.shape[0], FILE_LENGTH)])[0:N_CHUNCKS]
     result_dir = f"{OUTPUT_DIR}/{DATASET_DIR}/{subject}".replace("-", "_")
     Path(result_dir).mkdir(parents=True, exist_ok=True) 
@@ -89,6 +92,15 @@ def make_files(raw: np.array, channel, subject):
         for datum in chunk:
             result_file.write(str(datum) + ",")
         result_file.write("0.0")
+
+    print("full", chunk.shape)
+    new_filename = f"{result_dir}/{channel}_full.csv".replace("-", "_")
+    print(new_filename)
+    result_file = open(new_filename, 'w')
+    for datum in chunks_full:
+        result_file.write(str(datum) + ",")
+    result_file.write("0.0")
+    
 
 def process_dir():
     namers = {
@@ -106,6 +118,7 @@ def process_dir():
             process_fif(filename, namers[DATASET_DIR])
         except Exception as exception:
             logging.error(exception, exc_info=True)
+            #  sys.exit(1)
             
         count += 1
 
