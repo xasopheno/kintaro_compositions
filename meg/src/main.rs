@@ -9,7 +9,7 @@ use crate::instancer::MegInstancer;
 fn main() -> Result<(), Error> {
     println!("Hello, Brain");
     let config = make_config();
-    run("./src/meg_pulses.socool", config)
+    run("./src/meg.socool", config)
 }
 
 pub fn make_config() -> Config {

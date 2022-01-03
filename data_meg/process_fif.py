@@ -86,7 +86,7 @@ def make_files(raw: np.array, channel, subject):
     Path(result_dir).mkdir(parents=True, exist_ok=True) 
     for (file_number, chunk)in enumerate(chunks):
         print(file_number, chunk.shape)
-        new_filename = f"{result_dir}/{channel}_{file_number}.csv".replace("-", "_")
+        new_filename = f"{result_dir}/{channel}_{file_number}.csv".replace("-", "_").lower()
         print(new_filename)
         result_file = open(new_filename, 'w')
         for datum in chunk:
@@ -94,7 +94,7 @@ def make_files(raw: np.array, channel, subject):
         result_file.write("0.0")
 
     print("full", chunk.shape)
-    new_filename = f"{result_dir}/{channel}_full.csv".replace("-", "_")
+    new_filename = f"{result_dir}/{channel}_full.csv".replace("-", "_").lower()
     print(new_filename)
     result_file = open(new_filename, 'w')
     for datum in chunks_full:
