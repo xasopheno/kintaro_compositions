@@ -1,18 +1,38 @@
+#[allow(unused_imports)]
+use log::{debug, error, info, log_enabled, Level};
 use serde::Serialize;
 use serde_json::value::{Map, Value as Json};
+use walkdir::WalkDir;
 
 use std::error::Error;
 use std::fs::File;
 
-use handlebars::{
-    to_json, Context, Handlebars, Helper, JsonRender, Output, RenderContext, RenderError,
-};
+use handlebars::{to_json, Handlebars};
 
 #[derive(Serialize)]
 pub struct Meg {
     filename: String,
     pan: f32,
     scale: String,
+}
+
+fn get_filename() -> Vec<String> {
+    let input_dir = "../../";
+    WalkDir::new(input_dir)
+        .into_iter()
+        .map(|entry| {
+            let entry = entry.unwrap().path().display().to_string();
+            if entry.ends_with("0.csv") {
+                Some(entry)
+            } else {
+                None
+            }
+        })
+        .collect::<Vec<Option<String>>>()
+        .into_iter()
+        .filter(|x| x.is_some())
+        .map(|x| x.unwrap())
+        .collect()
 }
 
 pub fn make_data() -> Map<String, Json> {

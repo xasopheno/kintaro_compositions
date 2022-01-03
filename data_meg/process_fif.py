@@ -18,8 +18,8 @@ FILE_LENGTH = 41700
 DATA_DIR = "../../neuro_data"
 N_CHUNCKS = 4
 N_SUBJECTS = 11
-DATASET_DIR = "ds003352-download"
-#  DATASET_DIR = "ds003703-download"
+#  DATASET_DIR = "ds003352-download"
+DATASET_DIR = "ds003703-download"
 
 def ds003352_namer(filename):
     result = filename.split("download/")[1]
