@@ -1,0 +1,16 @@
+{ f: 311.127, l: 1, g: 1, p: 0 }
+    
+data = { 
+  Overlay [
+      {{#each megs as |m| }}
+        #{{m.tag}} | csv({{m.scale}}) {{m.filename}} | Pa {{m.pan ~}},
+      {{/each}}
+  ]
+}
+
+main = {
+    Seq [
+        data,
+        Fm 0 | Lm 2
+    ]
+}

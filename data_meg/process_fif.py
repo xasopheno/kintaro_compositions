@@ -16,10 +16,10 @@ DEBUG=False
 OUTPUT_DIR = "new_result"
 FILE_LENGTH = 41700
 DATA_DIR = "../../neuro_data"
-N_CHUNCKS = 4
+N_CHUNKS = 4
 N_SUBJECTS = 11
-DATASET_DIR = "ds003352-download"
-#  DATASET_DIR = "ds003703-download"
+#  DATASET_DIR = "ds003352-download"
+DATASET_DIR = "ds003703-download"
 
 def ds003352_namer(filename):
     result = filename.split("download/")[1]
@@ -79,14 +79,14 @@ def process_fif(filename: str, namer):
 def make_files(raw: np.array, channel, subject):
     data = raw[0]
     print(data.size)
-    chunks_full = np.array(data[0:FILE_LENGTH * N_CHUNCKS])
+    chunks_full = np.array(data[0:FILE_LENGTH * N_CHUNKS])
     print(chunks_full.shape)
-    chunks = np.array([data[i:i+FILE_LENGTH] for i in range(0, data.shape[0], FILE_LENGTH)])[0:N_CHUNCKS]
+    chunks = np.array([data[i:i+FILE_LENGTH] for i in range(0, data.shape[0], FILE_LENGTH)])[0:N_CHUNKS]
     result_dir = f"{OUTPUT_DIR}/{DATASET_DIR}/{subject}".replace("-", "_")
     Path(result_dir).mkdir(parents=True, exist_ok=True) 
     for (file_number, chunk)in enumerate(chunks):
         print(file_number, chunk.shape)
-        new_filename = f"{result_dir}/{channel}_{file_number}.csv".replace("-", "_")
+        new_filename = f"{result_dir}/{channel}_{file_number}.csv".replace("-", "_").lower()
         print(new_filename)
         result_file = open(new_filename, 'w')
         for datum in chunk:
@@ -94,14 +94,13 @@ def make_files(raw: np.array, channel, subject):
         result_file.write("0.0")
 
     print("full", chunk.shape)
-    new_filename = f"{result_dir}/{channel}_full.csv".replace("-", "_")
+    new_filename = f"{result_dir}/{channel}_full.csv".replace("-", "_").lower()
     print(new_filename)
     result_file = open(new_filename, 'w')
     for datum in chunks_full:
         result_file.write(str(datum) + ",")
     result_file.write("0.0")
     
-
 def process_dir():
     namers = {
         "ds003352-download": ds003352_namer,

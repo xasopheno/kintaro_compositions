@@ -9,9 +9,6 @@ use std::{
 use walkdir::WalkDir;
 use yin::{Analyze, DetectionResult};
 
-// Type inference lets us omit an explicit type signature (which
-// would be `HashMap<String, String>` in this example).
-
 const SAMPLE_RATE: f32 = 1024.0;
 const PROBABILITY_THRESHOLD: f32 = 0.3;
 
