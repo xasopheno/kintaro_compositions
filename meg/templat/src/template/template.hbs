@@ -3,7 +3,7 @@
 data = { 
   Overlay [
       {{#each megs as |m| }}
-        #tag | csv({{m.scale}}) {{m.filename}} | Pa {{m.pan ~}},
+        #{{m.tag}} | csv({{m.scale}}) {{m.filename}} | Pa {{m.pan ~}},
       {{/each}}
   ]
 }
