@@ -5,33 +5,16 @@ use kintaro::{colorsets_from_vec_hex_strings, ColorMap, ColorSets};
 
 pub fn color_map() -> ColorMap {
     let colors = vec![
-        ("left_frontal", vec!["#dd1133", "#222222"]),
-        ("right_frontal", vec!["#833903", "#222222"]),
-        ("left_temporal", vec!["#744253", "#333333"]),
-        ("left_parietal", vec!["#887880", "#111111"]),
-        ("right_parietal", vec!["#63474D", "#111111"]),
-        ("right_temporal", vec!["#683347", "#333333"]),
-        ("left_occipital", vec!["#1A3A3A", "#222222"]),
-        ("right_occipital", vec!["#383F51", "#222222"]),
-    ];
-
-    color_map_from_named_colorsets(colors)
-}
-
-pub fn _color_map() -> ColorMap {
-    let colors = vec![
-        ("a", vec!["#dd1133", "#122333"]),
-        ("b", vec!["#cc3344", "#122222"]),
-        ("c", vec!["#ff0033", "#122111"]),
-        ("d", vec!["#5a38ff", "#4a3112"]),
-        ("e", vec!["#4a38dd", "#4a3123"]),
-        ("f", vec!["#3a38bb", "#4a3134"]),
-        ("g", vec!["#11aa88", "#11a111"]),
-        ("h", vec!["#33aa77", "#22a133"]),
-        ("i", vec!["#55aa66", "#33a155"]),
-        ("j", vec!["#885533", "#ffaaaa"]),
-        ("k", vec!["#885544", "#ffaabb"]),
-        ("l", vec!["#885554", "#ffaacc"]),
+        ("a", vec!["#dd1133", "#030303"]),
+        ("b", vec!["#2339e3", "#303030"]),
+        ("c", vec!["#744253", "#ccddaa"]),
+        ("d", vec!["#887880", "#facba2"]),
+        ("e", vec!["#63474D", "#adc37a"]),
+        ("f", vec!["#683347", "#faed00"]),
+        ("g", vec!["#1A3A3A", "#fadf23"]),
+        ("h", vec!["#383F51", "#dadfea"]),
+        ("i", vec!["#cc2277", "#232423"]),
+        ("j", vec!["#ee4499", "#3f2527"]),
     ];
 
     color_map_from_named_colorsets(colors)

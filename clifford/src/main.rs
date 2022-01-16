@@ -9,7 +9,7 @@ use crate::instancer::MegInstancer;
 fn main() -> Result<(), Error> {
     println!("Hello, Brain");
     let config = make_config();
-    run("./src/meg_gen.socool", config)
+    run("./src/template.socool", config)
 }
 
 pub fn make_config() -> Config {
@@ -33,8 +33,8 @@ pub fn make_config() -> Config {
         window_size: (1920 * 2, 1080 * 2),
         cameras,
         shape: Shape {
-            n_vertices: 30,
-            n_indices: 30,
+            n_vertices: 70,
+            n_indices: 70,
             position: Box::new(RandPosition),
             color: Box::new(color::color_map()),
             indices: Box::new(RandIndex),

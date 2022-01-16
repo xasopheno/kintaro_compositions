@@ -1,3 +1,4 @@
+use handlebars::{to_json, Handlebars};
 #[allow(unused_imports)]
 use log::{debug, error, info, log, log_enabled, Level};
 use num_rational::Rational64;
@@ -5,13 +6,10 @@ use serde::{Deserialize, Serialize};
 use serde_json::json;
 use serde_json::value::{Map, Value as Json};
 use std::collections::HashMap;
-use std::path::Path;
-use walkdir::WalkDir;
-
 use std::error::Error;
 use std::fs::File;
-
-use handlebars::{to_json, Handlebars};
+use std::path::Path;
+use walkdir::WalkDir;
 
 #[derive(Serialize)]
 pub struct Meg {
@@ -21,7 +19,7 @@ pub struct Meg {
     scale: String,
 }
 const TARGET: &str = "0";
-const SCALE: &str = "2.0e12";
+const SCALE: &str = "2.0e14";
 
 fn get_filenames(target: &str) -> Vec<String> {
     let input_dir = "../../data_meg/new_result/ds003703_download/b2scmyvu_rest_01";
