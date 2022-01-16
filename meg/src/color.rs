@@ -3,8 +3,8 @@ use kintaro::color_map_from_named_colorsets;
 use kintaro::gen::GenColor;
 use kintaro::{colorsets_from_vec_hex_strings, ColorMap, ColorSets};
 
-pub fn color_map() -> ColorMap {
-    let colors = vec![
+pub fn named_colorsets<'a>() -> Vec<(&'a str, Vec<&'a str>)> {
+    vec![
         ("left_frontal", vec!["#dd1133", "#222222"]),
         ("right_frontal", vec!["#833903", "#222222"]),
         ("left_temporal", vec!["#744253", "#333333"]),
@@ -13,9 +13,11 @@ pub fn color_map() -> ColorMap {
         ("right_temporal", vec!["#683347", "#333333"]),
         ("left_occipital", vec!["#1A3A3A", "#222222"]),
         ("right_occipital", vec!["#383F51", "#222222"]),
-    ];
+    ]
+}
 
-    color_map_from_named_colorsets(colors)
+pub fn color_map() -> ColorMap {
+    color_map_from_named_colorsets(named_colorsets())
 }
 
 pub fn _color_map() -> ColorMap {

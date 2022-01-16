@@ -12,7 +12,7 @@ fn main() -> Result<(), Error> {
     run("./src/meg_gen.socool", config)
 }
 
-pub fn make_config() -> Config {
+pub fn make_config() -> Config<'static> {
     let instance_mul = InstanceMul {
         x: 9.0,
         y: 19.0,
@@ -32,6 +32,7 @@ pub fn make_config() -> Config {
         volume: 0.20,
         window_size: (1920 * 2, 1080 * 2),
         cameras,
+        text: Some(color::named_colorsets()),
         shape: Shape {
             n_vertices: 30,
             n_indices: 30,
