@@ -56,15 +56,6 @@ pub fn make_config() -> Config<'static> {
         length: 1.0,
     };
     let (cameras, instance_mul) = Config::handle_save(instance_mul);
-    // pub composition_name: &'a str,
-    // pub renderable_configs: Vec<RenderableConfig<'a>>,
-    // pub volume: f32,
-    // pub window_size: (u32, u32),
-    // pub cameras: Vec<CameraConfig>,
-    // pub accumulation: bool,
-    // pub shape: Shape,
-    // pub instance_mul: InstanceMul,
-    // pub instancer: Box<dyn Instancer>,
     Config {
         composition_name: "Meg",
         renderable_configs: renderable_configs(),

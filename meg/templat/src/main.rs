@@ -19,7 +19,7 @@ pub struct Meg {
     scale: String,
 }
 const TARGET: &str = "0";
-const SCALE: &str = "2.0e14";
+const SCALE: &str = "2.0e13";
 
 fn get_filenames(target: &str) -> Vec<String> {
     let input_dir = "../../data_meg/new_result/ds003703_download/b2scmyvu_rest_01";
@@ -85,7 +85,7 @@ pub fn make_data() -> Map<String, Json> {
 
             let channel_context = get_channel_context(&file_stem, &coords).unwrap();
             Meg {
-                filename: filename.to_string(),
+                filename: filename[3..].to_string(),
                 pan: channel_context.pan,
                 tag: channel_context.brain_region,
                 scale: SCALE.into(),
@@ -108,6 +108,11 @@ fn get_channel_context(filestem: &str, coords: &Coords) -> Option<ChannelContext
     for (brain_region, values) in coords.into_iter() {
         for sensor in &values.sensors {
             if filestem.starts_with(sensor) {
+                println!(
+                    "{filestem}->{sensor}->{brain_region}->{} {}",
+                    values.pan.numer(),
+                    values.pan.denom()
+                );
                 return Some(ChannelContext {
                     brain_region: brain_region.clone(),
                     pan: format!("{}/{}", values.pan.numer(), values.pan.denom()),

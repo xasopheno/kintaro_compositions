@@ -1,18 +1,17 @@
-use indexmap::IndexMap;
 use kintaro::color_map_from_named_colorsets;
-use kintaro::gen::GenColor;
+// use kintaro::gen::GenColor;
 use kintaro::{colorsets_from_vec_hex_strings, ColorMap, ColorSets};
 
 pub fn named_colorsets<'a>() -> Vec<(&'a str, Vec<&'a str>)> {
     vec![
-        ("left_temporal", vec!["#744253"]),
-        ("left_parietal", vec!["#887880"]),
-        ("left_frontal", vec!["#dd1133"]),
-        ("left_occipital", vec!["#1A3A3A"]),
-        ("right_occipital", vec!["#383F51"]),
-        ("right_frontal", vec!["#833903"]),
-        ("right_parietal", vec!["#63474D"]),
-        ("right_temporal", vec!["#683347"]),
+        ("rightTemporal", vec!["#683347"]),
+        ("rightParietal", vec!["#63474D"]),
+        ("rightFrontal", vec!["#ffffff"]),
+        ("rightOccipital", vec!["#383F51"]),
+        ("leftOccipital", vec!["#1A3A3A"]),
+        ("leftFrontal", vec!["#dd1133"]),
+        ("leftParietal", vec!["#887880"]),
+        ("leftTemporal", vec!["#744253"]),
     ]
 }
 

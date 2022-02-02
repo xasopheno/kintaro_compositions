@@ -23,11 +23,11 @@ impl Instancer for MegInstancer {
         let mut rng = rand::thread_rng();
         let rotation = cgmath::Quaternion::from_axis_angle(
             cgmath::Vector3::unit_x(),
-            cgmath::Deg(rng.gen_range(-0.3..0.3)),
+            cgmath::Deg(rng.gen_range(-10.8..10.8)),
         );
 
         InstancerOutput {
-            x: -input.x,
+            x: input.x,
             y: input.y,
             z: input.z,
             length: input.length,

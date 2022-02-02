@@ -1,6 +1,6 @@
 {
-  "left_temporal": {
-    "pan": [-10, 10],
+  "leftTemporal": {
+    "pan": [10, 10],
     "sensors": [
       "011",
       "013",
@@ -17,8 +17,8 @@
       "162"
     ]
   },
-  "left_parietal": {
-    "pan": [-7, 10],
+  "leftParietal": {
+    "pan": [7, 10],
     "sensors": [
       "041",
       "042",
@@ -35,8 +35,8 @@
       "201"
     ]
   },
-  "left_frontal": {
-    "pan": [-3, 10],
+  "leftFrontal": {
+    "pan": [3, 10],
     "sensors": [
       "012",
       "031",
@@ -53,8 +53,8 @@
       "082"
     ]
   },
-  "left_occipital": {
-    "pan": [-1, 10],
+  "leftOccipital": {
+    "pan": [1, 10],
     "sensors": [
       "164",
       "171",
@@ -70,8 +70,8 @@
       "214"
     ]
   },
-  "right_occipital": {
-    "pan": [1, 10],
+  "rightOccipital": {
+    "pan": [-1, 10],
     "sensors": [
       "203",
       "212",
@@ -87,8 +87,8 @@
       "254"
     ]
   },
-  "right_frontal": {
-    "pan": [3, 10],
+  "rightFrontal": {
+    "pan": [-3, 10],
     "sensors": [
       "081",
       "091",
@@ -105,8 +105,8 @@
       "141"
     ]
   },
-  "right_parietal": {
-    "pan": [7, 10],
+  "rightParietal": {
+    "pan": [-7, 10],
     "sensors": [
       "072",
       "073",
@@ -123,8 +123,8 @@
       "244"
     ]
   },
-  "right_temporal": {
-    "pan": [10, 10],
+  "rightTemporal": {
+    "pan": [-10, 10],
     "sensors": [
       "131",
       "132",

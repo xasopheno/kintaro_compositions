@@ -1,18 +1,41 @@
 mod color;
 mod instancer;
+use kintaro::config::named_colorsets;
+use kintaro::error::KintaroError;
+use kintaro::renderable::EventStreamConfig;
+use kintaro::renderable::GlyphyConfig;
+use kintaro::renderable::RenderableConfig;
+use kintaro::renderable::ToyConfig;
 use kintaro::{
     application::run, vertex::shape::Shape, Config, Error, InstanceMul, RandIndex, RandPosition,
 };
 
 use crate::instancer::MegInstancer;
 
-fn main() -> Result<(), Error> {
+fn main() -> Result<(), KintaroError> {
     println!("Hello, Brain");
     let config = make_config();
     run("./src/template.socool", config)
 }
 
-pub fn make_config() -> Config {
+fn renderable_configs() -> Vec<RenderableConfig<'static>> {
+    vec![
+        RenderableConfig::Toy(ToyConfig {
+            shader_path: "src/toy.wgsl",
+        }),
+        RenderableConfig::EventStreams(EventStreamConfig {
+            socool_path: "src/template.socool".to_string(),
+            shader_path: "./src/shader.wgsl",
+        }),
+        RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
+            text: vec![("How Many Musicians Does It Take", "#ff2323")],
+            location: (0.0, 0.0),
+            scale: 50.0,
+        }),
+    ]
+}
+
+pub fn make_config<'a>() -> Config<'a> {
     let instance_mul = InstanceMul {
         x: 9.0,
         y: 19.0,
@@ -23,12 +46,11 @@ pub fn make_config() -> Config {
     };
     let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
-        instance_shader: "./src/shader.wgsl".into(),
-        toy_shader: "./src/toy.wgsl".into(),
+        renderable_configs: renderable_configs(),
+        composition_name: "How Many Musicians Does It Take",
         instancer: Box::new(MegInstancer {}),
         instance_mul,
         accumulation: false,
-        filename: "kintaro".into(),
         volume: 0.20,
         window_size: (1920 * 2, 1080 * 2),
         cameras,

@@ -1,42 +1,29 @@
 use indexmap::IndexMap;
-use kintaro::{
-    color::{RandColor, RandColorSet},
-    colorset_from_hex_strings, colorsets_from_vec_hex_strings, color_map_from_named_gen_color
-    gen::GenColor,
-    ColorMap, ColorSet, ColorSets, NamedColorSet,
-};
+use kintaro::color_map_from_named_colorsets;
+use kintaro::gen::GenColor;
+use kintaro::{colorsets_from_vec_hex_strings, ColorMap, ColorSets};
 
-fn colors<'a>() -> Vec<NamedColorSet<'a>> {
+pub fn named_colorsets<'a>() -> Vec<(&'a str, Vec<&'a str>)> {
     vec![
-        ("a", vec!["#5a38ff", "#4a3100"]),
-        ("b", vec!["#00aa88", "#00a111"]),
-        ("c", vec!["#885511", "#ffaaaa"]),
-        ("d", vec!["#ff0000", "#122222"]),
-        ("e", vec!["#229292", "#010001"]),
-        ("f", vec!["#000f88", "#010001"]),
-        ("g", vec!["#333333", "#000000"]),
-        ("h", vec!["#ffffff", "#790000"]),
-        ("i", vec!["#334444", "#443333", "#778888"]),
+        ("a", vec!["#dd1133", "#030303"]),
+        ("b", vec!["#2339e3", "#303030"]),
+        ("c", vec!["#744253", "#ccddaa"]),
+        ("d", vec!["#887880", "#facba2"]),
+        ("e", vec!["#63474D", "#adc37a"]),
+        ("f", vec!["#683347", "#faed00"]),
+        ("g", vec!["#1A3A3A", "#fadf23"]),
+        ("h", vec!["#383F51", "#dadfea"]),
+        ("i", vec!["#cc2277", "#232423"]),
+        ("j", vec!["#ee4499", "#3f2527"]),
     ]
 }
 
-pub fn color_map(colors: ) -> ColorMap {
-    let colors: Vec<(&'a str, Box<dyn GenColor>)> = vec![
-        ("a", Box::new(RandColorSet::init(8))),
-        ("b", Box::new(RandColorSet::init(8))),
-        ("c", Box::new(RandColorSet::init(8))),
-        ("d", Box::new(RandColorSet::init(8))),
-        ("e", Box::new(RandColorSet::init(8))),
-        ("f", Box::new(RandColorSet::init(8))),
-        ("g", Box::new(RandColorSet::init(8))),
-        ("h", Box::new(RandColorSet::init(8))),
-        ("i", Box::new(RandColorSet::init(8))),
-    ];
-    color_map_from_named_gen_color(colors)
+pub fn color_map() -> ColorMap {
+    color_map_from_named_colorsets(named_colorsets())
 }
 
 #[allow(unused)]
-pub fn color_sets() -> ColorSets {
+pub fn colorsets() -> ColorSets {
     colorsets_from_vec_hex_strings(vec![
         vec!["#6655aa", "#222222"],
         vec!["#eeaC88", "#121312", "#333333"],
