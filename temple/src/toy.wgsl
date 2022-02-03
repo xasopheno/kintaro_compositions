@@ -3,6 +3,7 @@ struct Uniforms {
     height: f32;
     frame: f32;
     time: f32;
+    //kind: u32; 
 };
 
 [[group(0), binding(0)]]
@@ -24,19 +25,67 @@ fn fs_main(
     [[builtin(position)]] frag_coord: vec4<f32>
 ) -> [[location(0)]] vec4<f32> {
     var resolution = vec2<f32>(u.width, u.height);
-    var uv = frag_coord.xy / resolution;
-    return vec4<f32>(sin(u.time) * 0.01, 0.001, sin(u.time) * 0.003, 1.0);
-//    var color = vec4<f32>(sin(u.time * 0.008) * (uv.x + uv.y) * uv.y, sin(u.time * 0.001) * uv.y - uv.x, sin(u.time * 0.01) * uv.x - uv.y, 1.0);
- //   return color 
- //   * vec4<f32>(atan(u.time * 50.0 * (1.0 - uv.x - uv.y / uv.x)) * 0.1, atan(u.time * 100.0 * (uv.y - uv.y / uv.x))
- //   * 0.01, atan(u.time * 300.0 * (1.0 - uv.x - uv.y / uv.x)) * 0.03, 1.0)
- //   * vec4<f32>(20.0, 0.1, 0.1, 1.0); 
- //   if (uv.y * 1000.0 % 25.0 < 1.0) {
- //       return vec4<f32>(0.1, 0.1, 0.1, 1.0);
- //   } else {
- //       return vec4<f32>(abs(0.5 - uv.x) * 0.01, 0.0, abs(uv.x - 0.5) * 0.02, 0.0); 
-        // return vec4<f32>(0.002, 0.002, 0.003, 1.0);
- //   }
+    var uv = frag_coord.xy / resolution - vec2<f32>(0.25, 0.25);
+    // var uv = frag_coord.xy / resolution - vec2<f32>(1.15, 1.15);
+   //var thing = uv.x < 0.35 && uv.y > 0.85;
+   //if (thing) {
+//  return vec4<f32>(
+//      sin((103.0/uv.x * 45.0/uv.y) / 1.0) * 100.45, 
+//      sin((80.0/uv.x * 45.0/uv.y) / 1.0) * 0.45, 
+//      sin((80.0/uv.x * 85.0/uv.y) / 1.0) * 100.05, 
+//      1.0
+//  );
+  var time = u.time;
+  var r = sin(3.0/uv.x * 5.0/uv.y * sin(time/50.0 + 30.0));
+  var g = cos(4.0/uv.x * 4.0/uv.y * sin(time/10.0 + 100.0));
+  var b = cos(5.0/uv.x * 4.0/uv.y * sin(time/80.0 + 20.0));
+// if (x < 0.5) {
+//   x = 0.0;
+// };
+// if (y < 0.5) {
+//   y = 0.0;
+// };
+// if (z < 0.5) {
+//   z = 0.0;
+// };
+
+// if ((r > 0.25) && (g > 0.25 && (uv.y > 0.5))) {
+//   r = 1.0;
+//   g = 1.0;
+//   b = 0.0;
+// } 
+//
+    r = r * 0.35;
+    g = g * 0.15;
+    b = b * 0.45;
+
+  return vec4<f32>(
+      r,
+      g,
+      b,
+      // sin(3.0/uv.x * 5.0/uv.y * sin(time/500.0 + 30.0)) * 0.35, 
+      //cos(4.0/uv.x * 4.0/uv.y * sin(time/1000.0 + 100.0)) * 0.15, 
+      // cos(5.0/uv.x * 4.0/uv.y * sin(time/800.0 + 20.0)) * 0.45, 
+      1.0
+  );
+
+
+//   return vec4<f32>(
+//       sin(4.0/uv.x * 5.0/uv.y) * 0.15, 
+//       sin(4.0/uv.x * 5.0/uv.y) * 0.15, 
+//       sin(4.0/uv.x * 5.0/uv.y) * 0.15, 
+//       1.0
+//   );
+
+//   return vec4<f32>(
+//       sin(uv.y * uv.x) * 0.04, 
+//       sin(uv.y * -uv.x) * 0.08, 
+//       sin(uv.y * uv.x) * 0.30, 
+//       1.0
+//   );
+    // else {
+    //   return vec4<f32>(0.0, 0.0, 0.0, 0.0);
+    //
 }
 
 

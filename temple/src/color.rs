@@ -5,16 +5,16 @@ use kintaro::{colorsets_from_vec_hex_strings, ColorMap, ColorSets};
 
 pub fn named_colorsets<'a>() -> Vec<(&'a str, Vec<&'a str>)> {
     vec![
-        ("a", vec!["#dd1133", "#030303"]),
-        ("b", vec!["#2339e3", "#303030"]),
-        ("c", vec!["#744253", "#ccddaa"]),
-        ("d", vec!["#887880", "#facba2"]),
-        ("e", vec!["#63474D", "#adc37a"]),
-        ("f", vec!["#683347", "#faed00"]),
-        ("g", vec!["#1A3A3A", "#fadf23"]),
-        ("h", vec!["#383F51", "#dadfea"]),
-        ("i", vec!["#cc2277", "#232423"]),
-        ("j", vec!["#ee4499", "#3f2527"]),
+        ("a", vec!["#da1173", "#032333"]),
+        ("b", vec!["#233933", "#313030"]),
+        ("c", vec!["#743253", "#c1ddaa"]),
+        ("d", vec!["#883880", "#fac8a2"]),
+        ("e", vec!["#63477D", "#afcf7a"]),
+        ("f", vec!["#683387", "#ffed00"]),
+        ("g", vec!["#1A3A2A", "#f72323"]),
+        ("h", vec!["#388F51", "#dadfea"]),
+        ("i", vec!["#cc2277", "#232823"]),
+        ("j", vec!["#ee4399", "#382427"]),
     ]
 }
 
