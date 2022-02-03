@@ -115,16 +115,65 @@ thing5 = {
     | FitLength thing1
 }
 
+section1 = {
+    Overlay [
+        thing1,
+        thing2,
+        thing3,
+        thing4,
+        thing5,
+    ] 
+    -- | Repeat 4
+}
+
+section2 = {
+    #i
+    | O[
+        (5, 0, 1, -1/8),
+        (5, 8, 1, 1/8),
+        (3, 0, 1, -1/8),
+        (3, 8, 1, 1/8),
+        (1, 0, 1, -1),
+        (1, 8, 1, 1),
+        (1/2, 0, 1, -1),
+        (1/2, 8, 1, 1),
+        (1/4, 0, 1, -1),
+        (1/4, 0, 1, 1),
+    ]
+    | Seq [
+        Fm 5/4, Fm 3/2, Fm 1, Fm 7/8, 
+        Fm 4/3, Fm 3/2, Fm 9/8, Fm 7/8, 
+        Fm 5/3, Fm 2/3, Fm 4/3, Fm 9/8, Fm 1/2, Fm 5/6, 
+        Fm 15/8, Fm 3/2, Fm 5/8, Fm 5/4, Fm 9/8,
+        Fm 3/4, Fm 1/2, Fm 9/16, Fm 11/16, 
+        Fm 3/2, Fm 5/6, Fm 5/8, Fm 2, Fm 5/2,
+        Fm 2, Fm 9/8, Fm 2, Fm 1, Fm 1/2,
+        #j | Overlay [
+            Fm 1, Fm 3/2, Fm 9/4
+        ] | Gm 3/4
+        | Seq [
+            Fm 4/5, Fm 7/8, Fm 9/8, Fm 5/4, Fm 4/3, Fm 3/2,
+            Fm 11/8, Fm 4/3, Fm 9/8, Fm 4/3, Fm 11/8, Fm 4/3, Fm 5/4,
+        ]
+    ]
+    | Lm 1/10
+    | Repeat 3
+}
+
+feather_golem = {
+    Seq [
+        -- Fm 0 | Lm 1,
+        section1 | Repeat 2,
+        Fm 0 | Lm 1/100,
+        section2,
+    ]
+}
+
 main = {
     Seq [
-        Fm 0 | Lm 1,
-        Overlay [
-            thing1,
-            thing2,
-            thing3,
-            thing4,
-            thing5,
-        ] | Repeat 4,
-        Fm 0 | Lm 3,
+        -- Fm 0 | Lm 1,
+        feather_golem,
+        -- Fm 0 | Lm 3,
     ]
+    | Repeat 4
 }
