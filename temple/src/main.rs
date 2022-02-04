@@ -28,9 +28,9 @@ fn renderable_configs() -> Vec<RenderableConfig<'static>> {
             shader_path: "./src/shader.wgsl",
         }),
         RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-            text: vec![("Feather Golem", "#ff2300")],
+            text: vec![("Feather Father", "#ff2300")],
             location: (0.4, 0.9),
-            scale: 40.0,
+            scale: 80.0,
         }),
     ]
 }

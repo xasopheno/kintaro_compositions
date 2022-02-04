@@ -30,7 +30,7 @@ fn renderable_configs() -> Vec<RenderableConfig<'static>> {
         RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
             text: vec![("Template", "#ff2323")],
             location: (0.0, 0.0),
-            scale: 40.0,
+            scale: 80.0,
         }),
     ]
 }
