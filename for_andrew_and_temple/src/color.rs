@@ -5,7 +5,7 @@ use kintaro::{colorsets_from_vec_hex_strings, ColorMap, ColorSets};
 
 pub fn named_colorsets<'a>() -> Vec<(&'a str, Vec<&'a str>)> {
     vec![
-        ("a", vec!["#dd1133", "#030303"]),
+        ("a", vec!["#aa1133", "#030303"]),
         ("b", vec!["#2339e3", "#303030"]),
         ("c", vec!["#744253", "#ccddaa"]),
         ("d", vec!["#887880", "#facba2"]),

@@ -28,8 +28,13 @@ fn renderable_configs() -> Vec<RenderableConfig<'static>> {
             shader_path: "./src/shader.wgsl",
         }),
         RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-            text: vec![("Joke. Ha ha ha", "#ff4288")],
-            location: (0.45, 0.9),
+            text: vec![("exaggerations went up by", "#ff4288")],
+            location: (0.35, 0.86),
+            scale: 80.0,
+        }),
+        RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
+            text: vec![("a million percent last year", "#ff4288")],
+            location: (0.38, 0.9),
             scale: 80.0,
         }),
     ]
