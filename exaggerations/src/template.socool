@@ -34,11 +34,16 @@ thing1 = {
 
 main = {
     Seq [
-        thing1,
+        Seq [
+            thing1,
+        ]
+        | Repeat 2
+        | Seq [Fm 1, Fm 5/6]
+        | Repeat 6
+        | Lm 2/3,
+        Fm 0 | Lm 8,
     ]
-    | Repeat 2
-    | Seq [Fm 1, Fm 5/6]
-    | Repeat 6
-    | Lm 2/3
     -- | Gm 1/2
-}
+} -> [
+    a, b, c, d
+]

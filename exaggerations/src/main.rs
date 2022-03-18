@@ -30,12 +30,12 @@ fn renderable_configs() -> Vec<RenderableConfig<'static>> {
         RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
             text: vec![("exaggerations went up by", "#ff4288")],
             location: (0.35, 0.86),
-            scale: 80.0,
+            scale: 70.0,
         }),
         RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-            text: vec![("a million percent last year", "#ff4288")],
+            text: vec![("a MILLION PERCENT last year!", "#ff4288")],
             location: (0.38, 0.9),
-            scale: 80.0,
+            scale: 70.0,
         }),
     ]
 }
