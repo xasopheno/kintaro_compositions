@@ -1,6 +1,6 @@
 mod color;
 mod instancer;
-use kintaro::config::named_colorsets;
+use kintaro::config::{named_colorsets, FramePass};
 use kintaro::error::KintaroError;
 use kintaro::renderable::EventStreamConfig;
 use kintaro::renderable::GlyphyConfig;
@@ -18,20 +18,42 @@ fn main() -> Result<(), KintaroError> {
     run("./src/template.socool", config)
 }
 
-fn renderable_configs() -> Vec<RenderableConfig<'static>> {
+fn frame_passes() -> Vec<FramePass> {
     vec![
-        RenderableConfig::Toy(ToyConfig {
-            shader_path: "src/toy.wgsl",
-        }),
-        RenderableConfig::EventStreams(EventStreamConfig {
-            socool_path: "src/template.socool".to_string(),
-            shader_path: "./src/shader.wgsl",
-        }),
-        RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-            text: vec![("Template", "#ff2323")],
-            location: (0.0, 0.0),
-            scale: 80.0,
-        }),
+        FramePass {
+            output_frame: "main",
+            renderables: vec![
+                RenderableConfig::Toy(ToyConfig {
+                    shader_path: "src/toy.wgsl",
+                }),
+                RenderableConfig::EventStreams(EventStreamConfig {
+                    socool_path: "./src/template.socool".to_string(),
+                    shader_path: "./src/shader.wgsl",
+                }),
+                RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
+                    text: vec![("Cool", "#ff2365")],
+                    location: (0.7, 0.9),
+                    scale: 100.0,
+                }),
+            ],
+        },
+        // FramePass {
+        // output_frame: "main",
+        // renderables: vec![
+        // // RenderableConfig::ImageRenderer(ImageRendererConfig {
+        // // image_path: "src/image_renderer/milo.png",
+        // // }),
+        // RenderableConfig::Origami(OrigamiConfig {
+        // shader_path: "./src/origami_shader.wgsl",
+        // n_indices: 30,
+        // n_vertices: 20,
+        // }),
+        // RenderableConfig::Sampler(SamplerConfig {
+        // shader_path: "./src/sampler/sampler_shader.wgsl",
+        // input_frame: "frame1",
+        // }),
+        // ],
+        // },
     ]
 }
 
@@ -46,7 +68,7 @@ pub fn make_config<'a>() -> Config<'a> {
     };
     let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
-        renderable_configs: renderable_configs(),
+        renderable_configs: frame_passes(),
         composition_name: "How Many Musicians Does It Take",
         instancer: Box::new(MegInstancer {}),
         instance_mul,
