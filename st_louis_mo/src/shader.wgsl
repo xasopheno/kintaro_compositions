@@ -47,9 +47,9 @@ fn vs_main(
   out.color = vec4<f32>(color_matrix, instance.life);
  } else {
    out.color = vec4<f32>(color_matrix * vec3<f32>(
-         1.0 * instance.life, 
-         1.0 * instance.life, 
-         1.0 * instance.life, 
+         instance.life, 
+         instance.life, 
+         instance.life, 
        ), instance.life);
  };
 

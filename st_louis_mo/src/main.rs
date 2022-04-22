@@ -31,7 +31,7 @@ fn frame_passes() -> Vec<FramePass> {
                     shader_path: "./src/shader.wgsl",
                 }),
                 RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-                    text: vec![("Cool", "#ff2365")],
+                    text: vec![("St. Louis, MO", "#321145")],
                     location: (0.7, 0.9),
                     scale: 100.0,
                 }),
@@ -69,7 +69,7 @@ pub fn make_config<'a>() -> Config<'a> {
     let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
         renderable_configs: frame_passes(),
-        composition_name: "How Many Musicians Does It Take",
+        composition_name: "St. Louis, MO",
         instancer: Box::new(MegInstancer {}),
         instance_mul,
         accumulation: false,
@@ -77,8 +77,8 @@ pub fn make_config<'a>() -> Config<'a> {
         window_size: (1920 * 2, 1080 * 2),
         cameras,
         shape: Shape {
-            n_vertices: 70,
-            n_indices: 70,
+            n_vertices: 30,
+            n_indices: 30,
             position: Box::new(RandPosition),
             color: Box::new(color::color_map()),
             indices: Box::new(RandIndex),
