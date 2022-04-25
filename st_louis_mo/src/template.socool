@@ -179,7 +179,7 @@ bd = {
     | FitLength melody
 } 
 
-main = {
+composition = {
     Overlay [
         #a | melody 
         | Repeat 2
@@ -204,7 +204,17 @@ main = {
         ],
         #f | bd | Repeat 2, 
     ]
-    | Seq [Lm 1/6, Lm 1/7]
-    | Repeat 2
+}
+
+main = {
+  Seq [
+    composition | Lm 1/6, 
+    Fm 0 | Lm 1/8, 
+    Fm 0 | Lm 1/8, 
+    composition | Lm 1/7,
+    Fm 0 | Lm 1/8, 
+    Fm 0 | Lm 1/8, 
+  ]
+  | Repeat 2
     -- | Gm 4/5
 }
