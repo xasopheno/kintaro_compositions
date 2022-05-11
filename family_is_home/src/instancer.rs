@@ -14,7 +14,7 @@ impl Instancer for MegInstancer {
         instance.position.y += 30.0 * (2.0 - instance.life) * f32::signum(instance.position.y);
         instance.position.y +=
             f32::sin(dt * 1000.0 * f32::sin(instance.position.z) * f32::tan(instance.life));
-        instance.position.z -= 1.0 * (2.0 - instance.life);
+        instance.position.z -= 30.0 * (2.0 - instance.life);
     }
 
     fn op4d_to_instance_transformation(&self, input: InstancerInput) -> InstancerOutput {
