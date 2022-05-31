@@ -1,6 +1,6 @@
 mod color;
 mod instancer;
-use kintaro::config::FramePass;
+use kintaro::config::{named_colorsets, FramePass};
 use kintaro::error::KintaroError;
 use kintaro::renderable::EventStreamConfig;
 use kintaro::renderable::GlyphyConfig;

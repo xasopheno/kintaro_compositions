@@ -28,11 +28,19 @@ fn frame_passes() -> Vec<FramePass> {
             RenderableConfig::EventStreams(EventStreamConfig {
                 socool_path: "./src/template.socool".to_string(),
                 shader_path: "./src/shader.wgsl",
+                instancer: Box::new(MegInstancer {}),
+                shape: Shape {
+                    n_vertices: 30,
+                    n_indices: 30,
+                    position: Box::new(RandPosition),
+                    color: Box::new(color::color_map()),
+                    indices: Box::new(RandIndex),
+                },
             }),
             RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
                 text: vec![("Family is Home", "#321145")],
                 location: (0.7, 0.9),
-                scale: 100.0,
+                scale: 40.0,
             }),
         ],
     }]
@@ -47,25 +55,14 @@ pub fn make_config<'a>() -> Config<'a> {
         size: 23.0,
         length: 1.0,
     };
-    let (cameras, instance_mul) = Config::handle_save(
-        // cameras_list,
-        instance_mul,
-    );
+    let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
         renderable_configs: frame_passes(),
         composition_name: "Family is Home",
-        instancer: Box::new(MegInstancer {}),
         instance_mul,
         accumulation: false,
         volume: 0.20,
         window_size: (1920 * 2, 1080 * 2),
         cameras,
-        shape: Shape {
-            n_vertices: 30,
-            n_indices: 30,
-            position: Box::new(RandPosition),
-            color: Box::new(color::color_map()),
-            indices: Box::new(RandIndex),
-        },
     }
 }
