@@ -15,7 +15,7 @@ use crate::instancer::MegInstancer;
 fn main() -> Result<(), KintaroError> {
     println!("Hello, Brain");
     let config = make_config();
-    run("./src/template.socool", config)
+    run(config)
 }
 
 fn frame_passes() -> Vec<FramePass> {
@@ -26,8 +26,17 @@ fn frame_passes() -> Vec<FramePass> {
                 shader_path: "src/toy.wgsl",
             }),
             RenderableConfig::EventStreams(EventStreamConfig {
+                render_audio: true,
                 socool_path: "./src/template.socool".to_string(),
                 shader_path: "./src/shader.wgsl",
+                instancer: Box::new(MegInstancer {}),
+                shape: Shape {
+                    n_vertices: 30,
+                    n_indices: 30,
+                    position: Box::new(RandPosition),
+                    color: Box::new(color::color_map()),
+                    indices: Box::new(RandIndex),
+                },
             }),
             RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
                 text: vec![("Family is Home", "#321145")],
@@ -47,25 +56,13 @@ pub fn make_config<'a>() -> Config<'a> {
         size: 23.0,
         length: 1.0,
     };
-    let (cameras, instance_mul) = Config::handle_save(
-        // cameras_list,
-        instance_mul,
-    );
+    let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
-        renderable_configs: frame_passes(),
+        frame_passes: frame_passes(),
         composition_name: "Family is Home",
-        instancer: Box::new(MegInstancer {}),
         instance_mul,
-        accumulation: false,
         volume: 0.20,
         window_size: (1920 * 2, 1080 * 2),
         cameras,
-        shape: Shape {
-            n_vertices: 30,
-            n_indices: 30,
-            position: Box::new(RandPosition),
-            color: Box::new(color::color_map()),
-            indices: Box::new(RandIndex),
-        },
     }
 }
