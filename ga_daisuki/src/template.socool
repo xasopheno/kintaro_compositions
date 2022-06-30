@@ -9,9 +9,9 @@ fn1(a, b, c) = {
 
 attack = {
     Overlay [
-        #f | Seq [Fm 0, Fm 0, Fm 8, Fm 0] | Lm 1/7 | Gm 1/8,
-        Seq [Fm 0, Fm 0, Fm 3, Fm 0] | Lm 1/5 | Gm 1/5,
-        #f | Seq [Fm 0, Fm 0, Fm 2, Fm 0] | Lm 1/6 | Gm 1/4,
+        #f | Seq [Fm 0, Fm 0, Fm 8, Fm 0] | Lm 1/7 | Gm 1/3,
+        Seq [Fm 0, Fm 0, Fm 3, Fm 0] | Lm 1/5 | Gm 1/3,
+        #f | Seq [Fm 0, Fm 0, Fm 2, Fm 0] | Lm 1/6 | Gm 1/2,
         Fm 1, 
     ]
 }
@@ -105,5 +105,5 @@ main = {
     ]
     | Repeat 5
     | Lm 1/10
-    | Gm 2/5
+    | Gm 1/5
 }

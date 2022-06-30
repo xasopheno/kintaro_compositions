@@ -784,9 +784,9 @@ dependencies = [
 
 [[package]]
 name = "crossbeam-channel"
-version = "0.5.1"
+version = "0.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06ed27e177f16d65f0f0c22a213e17c696ace5dd64b14258b52f9417ccb52db4"
+checksum = "4c02a4d71819009c192cf4872265391563fd6a84c81ff2c0f2a7026ca4c1d85c"
 dependencies = [
  "cfg-if 1.0.0",
  "crossbeam-utils",
@@ -1025,6 +1025,12 @@ name = "downcast-rs"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
+
+[[package]]
+name = "drain-while"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0285eb0b1d8610e71efc2b047ae006207c8596c0fce812b5871c9a28ee61db0b"
 
 [[package]]
 name = "dyn-clone"
@@ -1690,6 +1696,7 @@ dependencies = [
  "chrono",
  "colored",
  "cradle",
+ "crossbeam-channel",
  "dyn-clone",
  "env_logger",
  "futures",
@@ -1699,6 +1706,7 @@ dependencies = [
  "kintaro_egui_lib",
  "log",
  "notify",
+ "opmap",
  "pollster",
  "rand 0.8.4",
  "raw-window-handle 0.3.4",
@@ -1709,6 +1717,7 @@ dependencies = [
  "serde_json",
  "thiserror",
  "weresocool_core",
+ "weresocool_instrument",
  "wgpu",
  "wgpu-types",
  "wgpu_glyph",
@@ -2413,6 +2422,13 @@ name = "once_cell"
 version = "1.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "692fcb63b64b1758029e0a96ee63e049ce8c5948587f2f7208df04625e5f6b56"
+
+[[package]]
+name = "opmap"
+version = "0.1.0"
+dependencies = [
+ "drain-while",
+]
 
 [[package]]
 name = "ordered-float"
@@ -3541,6 +3557,7 @@ dependencies = [
  "bytes",
  "clap",
  "colored",
+ "crossbeam-channel",
  "csv",
  "difference",
  "env_logger",
@@ -3553,6 +3570,7 @@ dependencies = [
  "num 0.3.1",
  "num-complex",
  "num-rational",
+ "opmap",
  "pbr",
  "portaudio",
  "rand 0.7.3",
