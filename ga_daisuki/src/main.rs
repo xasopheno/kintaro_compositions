@@ -28,8 +28,6 @@ fn frame_passes() -> Vec<FramePass> {
                 shader_path: "src/toy.wgsl",
             }),
             RenderableConfig::EventStreams(EventStreamConfig {
-                render_audio: true,
-                socool_path: "./src/template.socool".to_string(),
                 shader_path: "./src/shader.wgsl",
                 instancer: Box::new(crate::instancer::Instancer1 {}),
                 shape: Shape {
@@ -41,8 +39,6 @@ fn frame_passes() -> Vec<FramePass> {
                 },
             }),
             RenderableConfig::EventStreams(EventStreamConfig {
-                render_audio: false,
-                socool_path: "./src/template.socool".to_string(),
                 shader_path: "./src/shader2.wgsl",
                 instancer: Box::new(crate::instancer2::Instancer2 {}),
                 shape: Shape {
@@ -73,6 +69,7 @@ pub fn make_config<'a>() -> Config<'a> {
     };
     let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
+        socool_path: "./src/template.socool",
         frame_passes: frame_passes(),
         composition_name: "St. Louis, MO",
 
