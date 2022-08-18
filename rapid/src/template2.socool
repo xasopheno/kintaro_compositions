@@ -1,0 +1,35 @@
+{ f: 311.127, l: 1, g: 1, p: 0 }
+
+thing1 = {
+    Sine 1.1 | 
+    #a | Seq [
+        Fm 5/3, Fm 3/2, Fm 4/3, Fm 15/8, Fm 9/4
+    ]
+    | Overlay [Fm 1, Fm 2]
+    | Repeat 3
+}
+
+thing2 = {
+    #b 
+    | Square 0.3
+    | Fm 1/2
+    | Overlay [Fm 1, Fm 2]
+    | Seq [
+        Fm 1, Fm 2/3, Fm 3/4, Fm 15/16, Fm 5/8,
+        Fm 3/4, Fm 2/3, Fm 5/8, Fm 1/2, Fm 3/4
+    ]
+    | FitLength thing1
+    | Gm 3/4
+}
+
+main = {
+    Seq [
+        Overlay [
+            thing1, 
+            thing2
+        ],
+    ]
+    | Repeat 8
+    | Lm 1/10
+    | Gm 1/5
+}
