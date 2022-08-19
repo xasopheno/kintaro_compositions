@@ -11,16 +11,31 @@ thing1 = {
         (1, 0, 1, -1),
     ]
     | Overlay [
-        Seq [Fm 0 | Lm 3, Fm 2 | Lm 2, Fm 0 | Lm 3] | Lm 1/8,
+        #b | Seq [Fm 0 | Lm 3, Fm 5/2 | Lm 2, Fm 0 | Lm 3] | Lm 1/8,
         Fm 1
     ]
     | Seq [
-        Fm 1/4, Fm 5/4, Fm 3/2,
-        Fm 1/3, Fm 9/8, 
-        Fm 1/4
+        #d | Fm 1/4, Fm 5/4, Fm 3/4,
+        #d | Fm 1/3, Fm 9/8, 
+        #d | Fm 1/3
     ]
-    | Seq [Fm 1, Fm 4/5, Fm 9/8]
-    | Seq [Fm 1, Reverse | Lm 5/4]
+    | Seq [Fm 1, Fm 4/5, Fm 9/8 | Reverse]
+    | Seq [
+        Overlay [
+            \{ 
+                #c | O[
+                    (5, 0, 1, 4/5),
+                    (5, 8, 1, -4/5),
+                    (9/4, 0, 1, 2/3),
+                    (15/4, 0, 1, -2/3),
+                    (1, -4, 1, 1),
+                    (1, 0, 1, -1),
+                ] | Lm 3 
+            },
+            Fm 1
+        ],
+        Reverse
+    ]
     | Seq [Fm 1, Fm 4/5]
 }
 
@@ -31,5 +46,5 @@ main = {
         ]
     ]
     | Repeat 8
-    | Lm 1/10
+    | Lm 1/8
 }
