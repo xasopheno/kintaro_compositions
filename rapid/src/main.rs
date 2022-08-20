@@ -73,7 +73,7 @@ pub fn make_config<'a>() -> Config<'a> {
         frame_passes: frame_passes(),
         composition_name: "St. Louis, MO",
 
-        volume: 0.30,
+        volume: 0.80,
         window_size: (1920 * 2, 1080 * 2),
 
         instance_mul,

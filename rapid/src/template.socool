@@ -3,48 +3,65 @@
 thing1 = {
     #a 
     | O[
-        (2, 4, 1, 1/2),
-        (2, 0, 1, -1/2),
+        (2, 4, 1, 5/7),
+        (2, 0, 1, -5/7),
         (3/2, 2, 1/8, 1/5),
         (3/2, 0, 1/8, -1/5),
         (1, 3, 1, 1),
         (1, 0, 1, -1),
     ]
     | Overlay [
-        #b | Seq [Fm 0 | Lm 3, Fm 5/2 | Lm 2, Fm 0 | Lm 3] | Lm 1/8,
+        #b | Seq [Fm 0 | Lm 3, Fm 5/2 | Lm 2, Fm 0 | Lm 3] | Lm 1/8 | Gm 7/8,
         Fm 1
     ]
     | Seq [
-        #d | Fm 1/4, Fm 5/4, Fm 3/4,
-        #d | Fm 1/3, Fm 9/8, 
-        #d | Fm 1/3
+        #e | Fm 1/4, Fm 5/4, Fm 3/4,
+        #e | Fm 1/3, Fm 9/8, 
+        #e | Fm 1/3
     ]
     | Seq [Fm 1, Fm 4/5, Fm 9/8 | Reverse]
     | Seq [
         Overlay [
             \{ 
                 #c | O[
-                    (5, 0, 1, 4/5),
-                    (5, 8, 1, -4/5),
+                    (5, 0, 1, 2/5),
+                    (5, 8, 1, -2/5),
+                    (15/4, 0, 1, 3/5),
+                    (15/4, 8, 1, -3/5),
                     (9/4, 0, 1, 2/3),
                     (15/4, 0, 1, -2/3),
-                    (1, -4, 1, 1),
-                    (1, 0, 1, -1),
-                ] | Lm 3 
+                    (1, -4, 1, 4/5),
+                    (1, 0, 1, -4/5),
+                    (1/2, -4, 1, 7/8),
+                    (1/2, 0, 1, -7/8),
+                    (1/4, -4, 1/2, 1/3),
+                    (1/4, 0, 1/2, -1/3),
+                ] | Lm 3 | Seq [Fm 9/8, Fm 1] 
             },
-            Fm 1
+            Fm 1 | Gm 4/5
         ],
-        Reverse
+        Reverse | Gm 4/5
     ]
-    | Seq [Fm 1, Fm 4/5]
+}
+
+noise = {
+    Noise 
+    | Seq [Fm 1, Fm 0] 
+    | Seq [Fm 1, Fm 1 | Pa -1/2, Fm 0, Fm 1, Fm 0, Fm 1] 
+    | Seq [Fm 1 | Pa -1/3, Fm 2 | Pa 1/2, Fm 1, Fm 0] 
+    | Seq [Fm 1, Fm 0, Fm 1/2 | Pm 1/2, Fm 2 | Reverse] 
+    | FitLength Lm 35
 }
 
 main = {
-    Seq [
-        Overlay [
-            thing1, 
-        ]
+    Overlay [
+        thing1, 
+        #g | noise,
     ]
-    | Repeat 8
     | Lm 1/8
+    | Gm 1/7
+    | Lm 1/1
+    | Seq [Fm 1, Fm 9/8, Fm 7/6]
+    | Seq [Repeat 2, Lm 3/2]
+    | Repeat 3
 }
