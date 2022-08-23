@@ -4162,8 +4162,6 @@ name = "weresocool_error"
 version = "1.0.0"
 dependencies = [
  "csv",
- "failure",
- "failure_derive",
  "hound",
  "portaudio",
  "scop",
