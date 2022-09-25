@@ -90,7 +90,12 @@ main = {
         bass,
     ]
     | Seq [
-        Fm 1 | Repeat 2, 
+        Fm 1 | Repeat 2
+        | ModBy [
+            Seq [
+                Lm 12, Fm 9/8, Fm 7/8, Fm 5/4, Fm 9/8, Fm 0 | Lm 1/8
+            ]
+        ],
         Fm 4/3 | Lm 2/3 | Reverse | Repeat 2
         | ModBy [
             Seq [
@@ -99,7 +104,6 @@ main = {
         ]
     ]
     | Repeat 3
-    -- | Fm 4/3 
     | Gm 1/6
     | Lm 1/2
 }
