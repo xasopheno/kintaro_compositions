@@ -49,11 +49,11 @@ drums_inner = {
         Fm 1, Fm 0, Fm 0, Fm 1, Fm 0, Fm 0,
         Fm 0, Fm 1, Fm 0, Fm 4, Fm 0, Fm 1, 
         Fm 0, Fm 5, Fm 0, Fm 0, Fm 1, Fm 0,
-        Fm 4, Fm 0, Fm 1/2, Fm 0, Fm 1, Fm 0,
+        Fm 4, Fm 0, Fm 1, Fm 0, Fm 1, Fm 0,
         Fm 1, Fm 0, Fm 1, Fm 0, Fm 1, Fm 0,
-        Fm 2, Fm 0, Fm 1, Fm 0, Fm 1, Fm 0,
-        Fm 0, Fm 1, Fm 0, Fm 2, Fm 0, Fm 1,
-        Fm 2, Fm 0, Fm 0, Fm 2, Fm 0, Fm 0,
+        Fm 3, Fm 0, Fm 1, Fm 0, Fm 1, Fm 0,
+        Fm 0, Fm 1, Fm 0, Fm 3, Fm 0, Fm 1,
+        Fm 3, Fm 0, Fm 0, Fm 3, Fm 0, Fm 0,
         Fm 1, Fm 0, Fm 0, Fm 4, Fm 0, Fm 1,
     ]
     | Gm 6/7

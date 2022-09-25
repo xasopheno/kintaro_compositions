@@ -900,9 +900,9 @@ dependencies = [
 
 [[package]]
 name = "crossbeam-channel"
-version = "0.5.5"
+version = "0.5.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c02a4d71819009c192cf4872265391563fd6a84c81ff2c0f2a7026ca4c1d85c"
+checksum = "c2dd04ddaf88237dc3b8d8f9a3c1004b506b54b3313403944054d23c0870c521"
 dependencies = [
  "cfg-if 1.0.0",
  "crossbeam-utils",
@@ -1781,6 +1781,12 @@ dependencies = [
  "hashbrown",
  "serde",
 ]
+
+[[package]]
+name = "indoc"
+version = "1.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "adab1eaa3408fb7f0c777a73e7465fd5656136fc93b670eb6df3c88c2c1344e3"
 
 [[package]]
 name = "inflate"
@@ -4059,9 +4065,11 @@ version = "1.0.0"
 dependencies = [
  "assert_cmd",
  "clap",
+ "crossbeam-channel",
  "difference",
  "hound",
  "indexmap",
+ "indoc",
  "notify",
  "num-rational 0.3.2",
  "opmap",
@@ -4161,8 +4169,6 @@ name = "weresocool_error"
 version = "1.0.0"
 dependencies = [
  "csv",
- "failure",
- "failure_derive",
  "hound",
  "portaudio",
  "scop",

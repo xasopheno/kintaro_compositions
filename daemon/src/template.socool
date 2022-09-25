@@ -73,7 +73,8 @@ main = {
         melody,
     ]
     | Repeat 8
+    | Fm 4/3
     | Gm 1/6
-    | Lm 1/4
+    | Lm 1/3
 }
 

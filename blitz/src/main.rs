@@ -69,7 +69,7 @@ pub fn make_config<'a>() -> Config<'a> {
     };
     let (cameras, instance_mul) = Config::handle_save(instance_mul);
     Config {
-        socool_path: "./src/template.socool",
+        socool_path: "./src/template2.socool",
         frame_passes: frame_passes(),
         composition_name: "Blitz",
 
