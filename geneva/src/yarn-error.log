@@ -1,0 +1,27 @@
+Arguments: 
+  /Users/danny/.nvm/versions/node/v16.17.1/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add lodash
+
+PATH: 
+  /usr/local/anaconda3/bin:/usr/local/anaconda3/condabin:/Users/danny/.cabal/bin:/Users/danny/.ghcup/bin:/Users/danny/.nvm/versions/node/v16.17.1/bin:/usr/local/Cellar/zplug/2.4.2/bin:/Users/danny/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/danny/.cargo/bin:/usr/local:/Users/danny/golang/bin:/usr/local/opt/go/libexec/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

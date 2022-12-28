@@ -1,0 +1,36 @@
+{ f: 311.127, l: 1, g: 1, p: 0 }
+
+main = {
+    O[
+        (1, 0.001, 1, -1/2),
+        (1, 0.0, 1, 1/2),
+        (1/2, 0, 1/8, 0),
+    ]
+    | Seq [
+        Overlay [
+            Seq [
+                Fm 2, Fm 0, Fm 0
+            ] | Lm 1/8,
+            Seq [
+                Fm 1, Fm 0, Fm 0
+            ] | Lm 1/3
+        ]
+        | Overlay [
+            csv(f: 1, l: 1) ./src/homes.csv | Fm 1/4 | Overlay [
+                Fm 1, Fm 3/2 | Gm 1/4
+            ] | Pa -1/7 | #f,
+            csv(f: 1, l: 1) ./src/rooms.csv | Overlay [
+                Fm 9/8 | Gm 1/2 | Fm 5/4, Fm 3/4 | Gm 1/4
+            ] | Pa 1/2 | #d,
+            csv(f: 1, l: 1) ./src/friends.csv | Overlay [
+                Fm 3/2, Fm 15/8
+            ] | Pa -1/2 | #e,
+            csv(f: 1, l: 1) ./src/messages.csv | Overlay [
+                Fm 9/4, Fm 3 | Gm 1/4
+            ] | Pa 1/9 | Gm 3/4 | #a,
+        ]
+    ]
+    | Lm 1/4
+}
+
+
