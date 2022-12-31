@@ -8,7 +8,7 @@ use kintaro::renderable::EventStreamConfig;
 use kintaro::renderable::GlyphyConfig;
 use kintaro::renderable::OrigamiConfig;
 use kintaro::renderable::RenderableConfig;
-use kintaro::renderable::ToyConfig;
+use kintaro::renderable::{ToyConfig, RGBA};
 use kintaro::{
     application::run,
     vertex::shape::{RandCircumference, Shape},
@@ -27,6 +27,12 @@ fn frame_passes() -> Vec<FramePass> {
         renderables: vec![
             RenderableConfig::Toy(ToyConfig {
                 shader_path: "src/toy.wgsl",
+                rgba: RGBA {
+                    r: 1.0,
+                    g: 1.0,
+                    b: 1.0,
+                    a: 1.0,
+                },
             }),
             RenderableConfig::Origami(OrigamiConfig {
                 shader_path: "src/origami_shader.wgsl",

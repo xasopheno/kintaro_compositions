@@ -3,6 +3,10 @@ struct Uniforms {
     height: f32;
     frame: f32;
     time: f32;
+    r: f32;
+    g: f32;
+    b: f32;
+    a: f32;
 };
 
 [[group(0), binding(0)]]

@@ -2,7 +2,8 @@ mod color;
 mod color2;
 mod instancer;
 mod instancer2;
-use kintaro::config::{named_colorsets, FramePass};
+use crate::color::named_colorsets;
+use kintaro::config::FramePass;
 use kintaro::error::KintaroError;
 use kintaro::renderable::EventStreamConfig;
 use kintaro::renderable::GlyphyConfig;
@@ -49,8 +50,14 @@ fn frame_passes() -> Vec<FramePass> {
             // indices: Box::new(RandIndex),
             // },
             // }),
+            //
+            RenderableConfig::Glyphy(GlyphyConfig::GlyphyNamedColorSetConfig {
+                text: named_colorsets(),
+                location: (0.05, 0.83),
+                scale: 35.0,
+            }),
             RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-                text: vec![("Geneva. Wed. Dec 22, 2022", "#381145")],
+                text: vec![("Geneva. Wed. Dec 22, 2022", "#3811dd")],
                 location: (0.7, 0.9),
                 scale: 50.0,
             }),

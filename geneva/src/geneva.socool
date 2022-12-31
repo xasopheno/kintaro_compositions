@@ -18,16 +18,16 @@ main = {
         | Overlay [
             csv(f: 1, l: 1) ./src/homes.csv | Fm 1/4 | Overlay [
                 Fm 1, Fm 3/2 | Gm 1/4
-            ] | Pa -1/7 | #f,
+            ] | Pa -1/7 | #createHome,
             csv(f: 1, l: 1) ./src/rooms.csv | Overlay [
                 Fm 9/8 | Gm 1/2 | Fm 5/4, Fm 3/4 | Gm 1/4
-            ] | Pa 1/2 | #d,
+            ] | Pa 1/2 | #createRoom,
             csv(f: 1, l: 1) ./src/friends.csv | Overlay [
                 Fm 3/2, Fm 15/8
-            ] | Pa -1/2 | #e,
+            ] | Pa -1/2 | #acceptFriendRequest,
             csv(f: 1, l: 1) ./src/messages.csv | Overlay [
                 Fm 9/4, Fm 3 | Gm 1/4
-            ] | Pa 1/9 | Gm 3/4 | #a,
+            ] | Pa 1/9 | Gm 3/4 | #sendMessageMutation,
         ]
     ]
     | Lm 1/4
