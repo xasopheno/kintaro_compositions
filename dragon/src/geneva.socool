@@ -67,18 +67,19 @@ melody = {
 }
 
 thing1 = {
+    #a |
     O[
         (1/1, 2, 1, 9/10),
         (1/1, 0, 1, -8/9),
     ]
     | Seq [
-        melody | Seq [Fm 7/6, Fm 4/3, Fm 5/3, Fm 7/6], 
+        #c | melody | Seq [Fm 7/6, Fm 4/3, Fm 5/3, Fm 7/6], 
         bass,
-        melody | Seq [Fm 7/4, Fm 5/3, Fm 4/3, Fm 9/8],
+        #c | melody | Seq [Fm 7/4, Fm 5/3, Fm 4/3, Fm 9/8],
         bass | Fm 3/2,
-        melody | Seq [Fm 5/3, Fm 11/8, Fm 7/6, Fm 7/6],
+        #c | melody | Seq [Fm 5/3, Fm 11/8, Fm 7/6, Fm 7/6],
         bass,
-        melody | Seq [Fm 5/4, Fm 4/3, Fm 5/3, Fm 4/3],
+        #c | melody | Seq [Fm 5/4, Fm 4/3, Fm 5/3, Fm 4/3],
         bass | Fm 2/3,
    ]
 }
@@ -121,6 +122,7 @@ thing2 = {
 }
 
 drums = {
+    #e |
     bd |
     Seq [
         Fm 1 | Pa 1/8, Fm 3/2, Fm 1, Fm 1/4 | Pa -2/3,
@@ -133,7 +135,7 @@ drums = {
         | Seq [
             Fm 0 | Lm 2/3, Fm 4/3,
         ] 
-        | Lm 1/2 | Fm 5/4
+        | Lm 1/2 | Fm 5/4 | #d
     ]
     | Fm 1 
     | Overlay [
@@ -146,9 +148,9 @@ drums = {
 
 main = {
     Overlay [ 
-        thing1 | #a,
+        thing1,
         thing2 | #b,
-        drums | #e | Pm 0
+        drums | Pm 0
     ]
     | Fm 1
     | Lm 1/6
