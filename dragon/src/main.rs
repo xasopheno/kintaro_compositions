@@ -28,17 +28,6 @@ fn frame_passes() -> Vec<FramePass> {
             RenderableConfig::Toy(ToyConfig {
                 shader_path: "src/toy.wgsl",
             }),
-            RenderableConfig::EventStreams(EventStreamConfig {
-                shader_path: "./src/shader.wgsl",
-                instancer: Box::new(crate::instancer::Instancer1 {}),
-                shape: Shape {
-                    n_vertices: 60,
-                    n_indices: 70,
-                    position: Box::new(RandPosition),
-                    color: Box::new(color::color_map()),
-                    indices: Box::new(RandIndex),
-                },
-            }),
             // RenderableConfig::EventStreams(EventStreamConfig {
             // shader_path: "./src/shader2.wgsl",
             // instancer: Box::new(crate::instancer2::Instancer2 {}),
@@ -50,14 +39,27 @@ fn frame_passes() -> Vec<FramePass> {
             // indices: Box::new(RandIndex),
             // },
             // }),
-            //
+            // RenderableConfig::Toy(ToyConfig {
+            // shader_path: "src/toy2.wgsl",
+            // }),
+            RenderableConfig::EventStreams(EventStreamConfig {
+                shader_path: "./src/shader.wgsl",
+                instancer: Box::new(crate::instancer::Instancer1 {}),
+                shape: Shape {
+                    n_vertices: 80,
+                    n_indices: 50,
+                    position: Box::new(RandPosition),
+                    color: Box::new(color::color_map()),
+                    indices: Box::new(RandIndex),
+                },
+            }),
             RenderableConfig::Glyphy(GlyphyConfig::GlyphyNamedColorSetConfig {
                 text: named_colorsets(),
                 location: (0.05, 0.83),
                 scale: 35.0,
             }),
             RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
-                text: vec![("Geneva. Wed. Dec 22, 2022", "#3811dd")],
+                text: vec![("Drag On", "#373729")],
                 location: (0.7, 0.9),
                 scale: 50.0,
             }),
