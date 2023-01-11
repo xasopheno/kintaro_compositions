@@ -32,8 +32,8 @@ fn frame_passes() -> Vec<FramePass> {
                 shader_path: "./src/shader.wgsl",
                 instancer: Box::new(crate::instancer::Instancer1 {}),
                 shape: Shape {
-                    n_vertices: 50,
-                    n_indices: 50,
+                    n_vertices: 60,
+                    n_indices: 70,
                     position: Box::new(RandPosition),
                     color: Box::new(color::color_map()),
                     indices: Box::new(RandIndex),

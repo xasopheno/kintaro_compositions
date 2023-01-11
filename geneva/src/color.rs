@@ -8,7 +8,7 @@ pub fn named_colorsets<'a>() -> Vec<(&'a str, Vec<&'a str>)> {
         ("sendMessageMutation", vec!["#dd1133", "#030303"]),
         // ("b", vec!["#293923", "#303030"]),
         // ("c", vec!["#744253", "#ccddaa"]),
-        ("createRoom", vec!["#447880", "#facba2"]),
+        ("createRoom", vec!["#447880", "#fa3355"]),
         ("acceptFriendRequest", vec!["#63474D", "#adc37a"]),
         ("createHome", vec!["#323341", "#2a0d10"]),
         // ("g", vec!["#1A3c3A", "#fadf23"]),

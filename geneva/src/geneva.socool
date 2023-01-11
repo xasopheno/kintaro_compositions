@@ -2,8 +2,8 @@
 
 main = {
     O[
-        (1, 0.001, 1, -1/2),
-        (1, 0.0, 1, 1/2),
+        (1, 0.001, 1, -1/8),
+        (1, 0.0, 1, 1/8),
         (1/2, 0, 1/8, 0),
     ]
     | Seq [
@@ -26,7 +26,8 @@ main = {
                 Fm 3/2, Fm 15/8
             ] | Pa -1/2 | #acceptFriendRequest,
             csv(f: 1, l: 1) ./src/messages.csv | Overlay [
-                Fm 9/4, Fm 3 | Gm 1/4
+                Fm 9/4, 
+                Fm 3 | Gm 1/4
             ] | Pa 1/9 | Gm 3/4 | #sendMessageMutation,
         ]
     ]
