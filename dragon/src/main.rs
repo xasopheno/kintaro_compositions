@@ -46,8 +46,8 @@ fn frame_passes() -> Vec<FramePass> {
                 shader_path: "./src/shader.wgsl",
                 instancer: Box::new(crate::instancer::Instancer1 {}),
                 shape: Shape {
-                    n_vertices: 80,
-                    n_indices: 50,
+                    n_vertices: 60,
+                    n_indices: 70,
                     position: Box::new(RandPosition),
                     color: Box::new(color::color_map()),
                     indices: Box::new(RandIndex),
@@ -55,7 +55,7 @@ fn frame_passes() -> Vec<FramePass> {
             }),
             RenderableConfig::Glyphy(GlyphyConfig::GlyphyNamedColorSetConfig {
                 text: named_colorsets(),
-                location: (0.05, 0.83),
+                location: (0.05, 0.80),
                 scale: 35.0,
             }),
             RenderableConfig::Glyphy(GlyphyConfig::GlypyTextConfig {
