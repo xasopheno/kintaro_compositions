@@ -30,25 +30,21 @@ fn fs_main(
     var r = 0.0;
     var g = 0.0;
     var b = 0.0;
-    if (
-      true
-      // uv.y * 1000.0 % 25.0 < 0.5
-      // || uv.x * 1000.0 % 25.0 < 0.5
-    ) {
-        r = 0.1 / uv.y * 1.0/uv.x;
-        b = 3.0 / uv.x * 20.0/uv.y - 50.0;
-        g = (3.0 / uv.x * 20.0/uv.y - 40.0) * 0.01;
+    if (uv.y * 1000.0 % 25.0 < 1.0) {
+        r = sin(((uv.y) / (uv.x)) * (time));
     } else {
-
+        r = sin((uv.x - 0.5 * uv.y - 0.5) * (time)) * 0.1;
     };
-    if (uv.y * 100.0 % 10.0 < 1.0) {
+    if (uv.y * 1000.0 % 25.0 < 1.0) {
+        g = sin(((uv.y) / (uv.x)) * (time)) * 0.1;
     } else {
+        g = sin((uv.x - 0.5 * uv.y - 0.5) * (time)) * 0.02;
     };
 
     return vec4<f32>(
-        r,
-        g,
-        b,
+        r * 0.1,
+        g * 0.1, 
+        0.001,
         // sin(((uv.y) / (uv.x)) * (time)) * 0.3,  
         // sin(((uv.y) / (uv.x)) * (time)) * 0.3,
         1.0

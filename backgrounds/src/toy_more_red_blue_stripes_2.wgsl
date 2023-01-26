@@ -25,23 +25,23 @@ fn fs_main(
 ) -> [[location(0)]] vec4<f32> {
     var resolution = vec2<f32>(u.width, u.height);
     var uv = frag_coord.xy / resolution;
-    var time = u.time + 100.0;
+    var time = u.time - 10.0;
 
     var r = 0.0;
     var g = 0.0;
     var b = 0.0;
     if (
-      true
-      // uv.y * 1000.0 % 25.0 < 0.5
-      // || uv.x * 1000.0 % 25.0 < 0.5
+      uv.y * 1000.0 % 25.0 < 0.5
+      || uv.x * 1000.0 % 25.0 < 0.5
     ) {
-        r = 0.1 / uv.y * 1.0/uv.x;
-        b = 3.0 / uv.x * 20.0/uv.y - 50.0;
-        g = (3.0 / uv.x * 20.0/uv.y - 40.0) * 0.01;
+        r = tan(sin(((uv.y) / (uv.x)) * (time)));
+        b = tan(sin(((uv.y) / (uv.x)) * (time)));
     } else {
 
     };
     if (uv.y * 100.0 % 10.0 < 1.0) {
+        r = tan(sin(((uv.y) / (uv.x)) * (time))) * 0.1;
+        b = sin(((uv.x) / (uv.x)) * (time)) * 0.1;
     } else {
     };
 
