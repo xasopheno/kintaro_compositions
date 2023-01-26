@@ -26,12 +26,12 @@ fn fs_main(
     var resolution = vec2<f32>(u.width, u.height);
     var uv = frag_coord.xy / resolution;
     uv.x = uv.x * 10000.0 / uv.y;
-    var time = u.time + 700.0;
+    var time = u.time + uv.y + uv.x;
 
     return vec4<f32>(
-        sin(((2.0/uv.x + 10.0 * 1.4) / (1.0/uv.y)) * (time + 1.0)) * 0.3, 
-        sin(((1.0/uv.x + 10.0 * 1.4) / (1.0/uv.y)) * (time + 1.0)) * 0.3, 
-        sin(((3.0/uv.x + 10.0 * 1.4) / (1.0/uv.y)) * (time + 1.0)) * 0.3, 
+        sin(((2.0/uv.x + 10.0 * 1.3) / (1.0/uv.y)) * (time + 1.0)) * 0.3, 
+        sin(((1.0/uv.x + 10.0 * 1.7) / (1.0/uv.y)) * (time + 1.0)) * 0.3, 
+        sin(((3.0/uv.x + 10.0 * 1.8) / (1.0/uv.y)) * (time + 1.0)) * 0.3, 
         1.0
     );
 //    return vec4<f32>(sin(u.time) * 0.01, 0.01, sin(u.time) * 0.03, 1.0);
