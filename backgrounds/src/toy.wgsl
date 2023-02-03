@@ -23,7 +23,7 @@ fn fs_main(
 ) -> [[location(0)]] vec4<f32> {
     var resolution = vec2<f32>(u.width, u.height);
     var uv = frag_coord.xy / resolution;
-    var time = (u.time + 10.0) / 4.0;
+    var time = (u.time + 10.0) / 7.0;
 
 var swirl = vec2<f32>(uv.x - 0.5, uv.y - 0.5);
 swirl = swirl * length(swirl) * (3.0 + sin(time * 0.05) * 0.15);
